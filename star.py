@@ -6,11 +6,11 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 BV_LIST = [
-    "BV1xxxxxx1",
-    "BV1xxxxxx2",
-    "BV1xxxxxx3",
-    "BV1xxxxxx4",
-    "BV1xxxxxx5"
+    "BV1PQFQzzEfU",
+    "BV1JwauzREYL",
+    "BV1gGsLeEEz1",
+    "BV1ZX4y1x7pG",
+    "BV1hA411k7Rd"
 ]
 
 # ======================
