@@ -1,0 +1,32 @@
+name: bili-data
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: install
+        run: pip install requests pandas matplotlib openpyxl
+
+      - name: run
+        run: python star.py
+
+      - name: commit
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add data/data.csv data/report.xlsx data/report.png
+          git commit -m "update" || exit 0
+          git push
